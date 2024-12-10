@@ -3,14 +3,14 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import React from 'react';
 
-const Dashboard = () => {
+const About = () => {
     
     return (
         <div>
-            <h1>Here are your pets:</h1>
+            <h1>Contact the author: fake@fakemail.com</h1>
         </div>
     );
 };
 
-export default Dashboard;
+export default About;
                 

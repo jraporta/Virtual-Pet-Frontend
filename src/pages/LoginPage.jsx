@@ -1,47 +1,17 @@
-
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import API from '../services/api';
 import React from 'react';
+import LoginForm from '../components/LoginForm/LoginForm';
+
 
 const LoginPage = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const navigate = useNavigate();
-
-    const handleLogin = async () => {
-        try {
-            const response = await API.post(
-                '/api/login',
-                { user: username, password: password },
-                {
-                    headers: {'Content-Type': 'application/json' }
-                }
-            );
-            console.log('Login successful:', response.data)
-            localStorage.setItem('token', response.data.token);
-            navigate('/dashboard');
-        } catch (error) {
-            console.error('Login failed:', error.response || error.message);
-        }
+    
+    const handleLogin = (credentials) => {
+        console.log('Login attempt from LoginPage:', credentials);
     };
 
     return (
-        <div>
-            <h1>Login</h1>
-            <input
-                type="text"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-            />
-            <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
-            <button onClick={handleLogin}>Login</button>
+        <div className="login-page">
+            <h1>Log In</h1>
+            <LoginForm onLogin={handleLogin} />
         </div>
     );
 };
