@@ -15,6 +15,7 @@ const LoginForm = ({ onLogin }) => {
         const data = await login(username, password);
         console.log('Login successful:', data);
         localStorage.setItem('token', data);
+        localStorage.setItem('username', username)
         navigate('/dashboard');
     } catch (err) {
         setError(err.response?.data?.message || 'Login failed. Please try again.');

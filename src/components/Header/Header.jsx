@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import LoginForm from '../LoginForm/LoginForm';
+import LogoutButton from '../LogoutButton/LogoutButton';
 import './Header.css'; // Import associated styles
 
 function Header() {
 
     const handleLogin = (credentials) => {
         console.log('Login attempt from Header', credentials)
+    }
+
+    const handleLogout = () => {
+        console.log('Logout success from Header')
     }
 
     return (
@@ -51,6 +56,7 @@ function Header() {
                 </ul>
             </nav>
             <LoginForm onLogin={handleLogin} />
+            <LogoutButton onLogout={handleLogout} />
         </header >
     );
 }
