@@ -1,0 +1,60 @@
+# Node modules
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Production environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor settings (VS Code specific)
+.vscode/
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+
+# Parcel-bundler cache (if used)
+.cache/
+
+# Lint/Formatting output
+eslintcache
+.prettiercache
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Next.js build output (if applicable)
+/.next/
+/out/
+
+# Storybook files
+storybook-static/
+
+# Temporary files
+*.swp
+*.swo
+*.tmp
+
+# Lockfiles
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
