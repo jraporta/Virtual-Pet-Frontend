@@ -15,6 +15,7 @@ const LoginForm = ({ onLogin }) => {
       const token = await loginRequest(username, password);
       login(navigate, username, token);
       console.log('Login successful:', token);
+      onLogin(username);
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed. Please try again.');
       console.error('Login failed', err);

@@ -1,17 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import LoginForm from '../LoginForm/LoginForm';
 import LogoutButton from '../LogoutButton/LogoutButton';
 import './Header.css'; // Import associated styles
 
 function Header() {
+    const [username, setUsername] = useState(null);
+
+    useEffect(() =>{
+        setUsername(localStorage.getItem('username'));
+    }, []);
 
     const handleLogin = (credentials) => {
         console.log('Login attempt from Header', credentials);
+        setUsername(credentials);
     }
 
     const handleLogout = () => {
         console.log('Logout success from Header');
+        setUsername(null);
     }
 
     return (
@@ -55,13 +62,19 @@ function Header() {
                     </li>
                 </ul>
             </nav>
-            {(localStorage.getItem('username') === 'barto') && (
-                <div>
-                    <LoginForm onLogin={handleLogin} />
-                </div>
-            )
-            }
-            <LogoutButton onLogout={handleLogout} />
+            <div>
+                {!username ? (
+                    <div>
+                        <LoginForm onLogin={handleLogin} />
+                    </div>
+                ) : (
+                    <div>
+                        <p>Welcome {localStorage.getItem('username')}!</p>
+                        <LogoutButton onLogout={handleLogout} />
+                    </div>
+                )
+                }
+            </div>
         </header >
     );
 }
