@@ -1,0 +1,15 @@
+/* Pet Component Styles */
+.pet-container {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 250px;
+  }
+  
+  /* Mood Label Styles */
+  .pet-mood-label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333; /* Adjust color to match your theme */
+  }
+  
