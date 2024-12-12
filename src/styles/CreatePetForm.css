@@ -1,0 +1,13 @@
+.create-pet-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.form-group {
+    margin-bottom: 16px;
+}
+.error {
+    color: red;
+}
+.success {
+    color: green;
+}

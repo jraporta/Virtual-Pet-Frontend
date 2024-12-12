@@ -1,0 +1,38 @@
+.pet-list {
+    padding: 16px;
+}
+.pet-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.pet-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    width: 150px;
+    text-align: center;
+}
+.pet-image {
+    width: 100%;
+    border-radius: 8px;
+}
+.progress-bar {
+    margin-top: 8px;
+}
+.progress-track {
+    background-color: #eee;
+    height: 8px;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.progress-fill {
+    height: 100%;
+}
+.progress-fill.happiness {
+    background-color: #4caf50;
+}
+.progress-fill.hunger {
+    background-color: #f44336;
+}

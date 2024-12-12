@@ -1,5 +1,6 @@
 import React from 'react';
 import CreatePetForm from '../components/CreatePetForm/CreatePetForm';
+import PetList from '../components/PetList/PetList';
 
 const Dashboard = () => {
 
@@ -8,6 +9,9 @@ const Dashboard = () => {
             <h1>Here are your pets:</h1>
             <div>
                 <CreatePetForm />
+            </div>
+            <div>
+                <PetList />
             </div>
         </div>
     );
