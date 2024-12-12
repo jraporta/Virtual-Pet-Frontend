@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login } from '../../services/authService';
+import { loginRequest, registerRequest } from '../../services/authService';
+import { login } from '../../services/loginService';
 import './LoginForm.css';
 
 const LoginForm = ({ onLogin }) => {
@@ -9,17 +10,34 @@ const LoginForm = ({ onLogin }) => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleLogin = async () => {
     try {
-        const data = await login(username, password);
-        console.log('Login successful:', data);
-        localStorage.setItem('token', data);
-        localStorage.setItem('username', username)
-        navigate('/dashboard');
+      const token = await loginRequest(username, password);
+      login(navigate, username, token);
+      console.log('Login successful:', token);
     } catch (err) {
-        setError(err.response?.data?.message || 'Login failed. Please try again.');
-        navigate('/notFound');
+      setError(err.response?.data?.message || 'Login failed. Please try again.');
+      console.error('Login failed', err);
+    }
+  };
+
+  const handleRegister = async () => {
+    try {
+      const token = await registerRequest(username, password);
+      login(navigate, username, token);
+      console.log('Register successful:', token);
+    } catch (err) {
+      setError(err.response?.data?.message || 'Register failed. Please try again.');
+      console.error('Register failed', err);
+    }
+  };
+
+  const handleSubmit = async (e, action) => {
+    e.preventDefault();
+    if (action === 'login') {
+      handleLogin();
+    } else if (action === 'register') {
+      handleRegister();
     }
   };
 
@@ -39,7 +57,21 @@ const LoginForm = ({ onLogin }) => {
         onChange={(e) => setPassword(e.target.value)}
         className="login-input"
       />
-      <button type="submit" className="login-button">Log In</button>
+      <button
+        type="button"
+        className="login-button"
+        onClick={(e) => handleSubmit(e, 'login')}
+      >
+        Log In
+      </button>
+      <button
+        type="button"
+        className="login-button"
+        onClick={(e) => handleSubmit(e, 'register')}
+      >
+        Register
+      </button>
+      {error && <p className="error-message">{error}</p>}
     </form>
   );
 };

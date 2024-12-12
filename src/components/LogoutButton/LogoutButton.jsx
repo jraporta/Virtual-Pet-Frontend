@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { logout } from '../../services/logoutService';
+import { logout } from '../../services/loginService';
 
 
 const LogoutButton = ({ onLogout }) => {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
-    logout();
+    await logout(navigate);
+    if (onLogout) onLogout();
   };
 
   return (
-    <button onClick={handleLogout}>Logout</button>
+    <div>
+      <button onClick={handleLogout}>Logout</button>
+    </div>
   );
 };
 

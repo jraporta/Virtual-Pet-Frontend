@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import LoginForm from '../LoginForm/LoginForm';
 import LogoutButton from '../LogoutButton/LogoutButton';
@@ -7,11 +7,11 @@ import './Header.css'; // Import associated styles
 function Header() {
 
     const handleLogin = (credentials) => {
-        console.log('Login attempt from Header', credentials)
+        console.log('Login attempt from Header', credentials);
     }
 
     const handleLogout = () => {
-        console.log('Logout success from Header')
+        console.log('Logout success from Header');
     }
 
     return (
@@ -55,7 +55,12 @@ function Header() {
                     </li>
                 </ul>
             </nav>
-            <LoginForm onLogin={handleLogin} />
+            {(localStorage.getItem('username') === 'barto') && (
+                <div>
+                    <LoginForm onLogin={handleLogin} />
+                </div>
+            )
+            }
             <LogoutButton onLogout={handleLogout} />
         </header >
     );

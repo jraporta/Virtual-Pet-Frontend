@@ -13,7 +13,6 @@ function App() {
                 <main>
                 <AppRoutes />
                 </main>
-                
             </div>
         </Router>
     );
