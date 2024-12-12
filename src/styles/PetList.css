@@ -12,6 +12,18 @@
     padding: 16px;
     width: 150px;
     text-align: center;
+    background-color: white;
+    cursor: pointer;
+    display: inline-block; /* Ensures proper spacing */
+    text-decoration: none;
+    color: inherit;
+}
+
+.pet-card:focus,
+.pet-card:hover {
+    outline: none;
+    border-color: #007bff; /* Highlight border on focus or hover */
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
 }
 .pet-image {
     width: 100%;

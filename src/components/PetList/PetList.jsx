@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { petService } from '../../services/petService';
+import { useNavigate } from 'react-router-dom';
 import '../../styles/PetList.css';
 
 function PetList() {
+    const navigate = useNavigate();
     const [pets, setPets] = useState([]);
+    const [activePet, setActivePet] = useState([]);
     const [error, setError] = useState('');
 
     useEffect(() => {
@@ -18,13 +21,23 @@ function PetList() {
         fetchPets();
     }, []);
 
+    const handlePetClick = (pet) => {
+        console.log('Pet clicked:', pet);
+        setActivePet(pet);
+        navigate('/pet');
+    };
+
     return (
         <div className="pet-list">
             <h2>Pet List</h2>
             {error && <p className="error">{error}</p>}
             <div className="pet-container">
                 {pets.map((pet) => (
-                    <div className="pet-card" key={pet.id}>
+                    <button
+                        className="pet-card"
+                        key={pet.id}
+                        onClick={() => handlePetClick(pet)}
+                    >
                         <img
                             src={pet.image}
                             alt={pet.name}
@@ -52,7 +65,7 @@ function PetList() {
                             </div>
                         </div>
                         <p>State: {pet.state}</p>
-                    </div>
+                    </button>
                 ))}
             </div>
         </div>
