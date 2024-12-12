@@ -13,3 +13,35 @@
     color: #333; /* Adjust color to match your theme */
   }
   
+  .pet-svg {
+    transition: all 0.3s ease;
+  }
+  
+  .waving .left-arm {
+    animation: wave 1s ease-in-out;
+  }
+  
+  .blinking .eye {
+    animation: blink 0.3s ease;
+  }
+  
+  @keyframes wave {
+    0%, 100% {
+      transform: rotate(0deg);
+      transform-origin: 30% 55%;
+    }
+    50% {
+      transform: rotate(80deg);
+      transform-origin: 30% 55%;
+    }
+  }
+  
+  @keyframes blink {
+    0%, 100% {
+      r: 5;
+    }
+    50% {
+      r: 0;
+    }
+  }
+  
