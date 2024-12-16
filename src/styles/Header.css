@@ -1,0 +1,68 @@
+:root {
+  /* Color Palette */
+  --primary-green: #3C9A4D;  /* Turtle shell green */
+  --secondary-green: #73D479; /* Mutant glow */
+  --accent-orange: #FF8800;  /* Michelangelo's bandana */
+  --accent-blue: #0074D9;    /* Leonardo's bandana */
+  --accent-red: #FF4136;     /* Raphael's bandana */
+  --accent-purple: #B10DC9;  /* Donatello's bandana */
+  --neutral-gray: #F5F5F5;   /* Background */
+  --text-dark: #333333;      /* Text color */
+  --text-light: #FFFFFF;     /* Light text */
+
+  /* Font */
+  --font-primary: 'Comic Sans MS', 'Arial', sans-serif;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--neutral-gray);
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--primary-green);
+  color: var(--text-light);
+  border-bottom: 5px solid var(--accent-orange);
+}
+
+.logo a {
+  text-decoration: none;
+  color: var(--accent-blue);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent-blue);
+}
+
+.nav-link.active {
+  border-bottom: 2px solid var(--accent-blue);
+}
+  

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Hamster from "../components/PetCanvas";
+import PetCanvas from "../components/PetCanvas";
 
 const Pet = () => {
 
@@ -9,7 +9,7 @@ const Pet = () => {
     return (
         <div>
             <h1>Take Care of Your Pet!</h1>
-            <Hamster color={color} mood={mood} />
+            <PetCanvas color={color} mood={mood} />
 
             <label>
                 Choose Pet Color:

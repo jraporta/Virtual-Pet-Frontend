@@ -9,7 +9,7 @@ const moodExpressions = {
     excited: "😆",
 };
 
-const PetCanvas = ({ color, mood, size = 200 }) => {
+const PetCanvas = ({ color, mood, size = 300 }) => {
     const [isWaving, setIsWaving] = useState(false);
     const [isBlinking, setIsBlinking] = useState(false);
     const [currentMood, setCurrentMood] = useState(mood);
@@ -29,6 +29,39 @@ const PetCanvas = ({ color, mood, size = 200 }) => {
         setIsBlinking(true);
         setTimeout(() => setIsBlinking(false), 300); // Reset after 0.3 seconds
     };
+
+    const renderTail = () => {
+        switch (currentMood) {
+            case "happy":
+                return ( 
+                    <>
+                    <path
+                        d="M50 130 L100 95 L100 65 L120 35 L85 50 L85 90 Z"
+                        stroke="black"
+                        strokeWidth="0.5"
+                        fill={color}
+                    />
+                    <path
+                        d="M100 65 L120 35 L85 50 Z"
+                        stroke="black"
+                        strokeWidth="0.5"
+                        fill="black"
+                    />
+                    </>
+                 );
+                 case "sad":
+                return ( 
+                    <path
+                        d="M50 110 T 80 90, 100 70, 120 50 T 100 30, 120 10, 100 0"
+                        stroke="grey"
+                        strokeWidth="8"
+                        fill="none"
+                    />
+                 );
+            default:
+                return (<circle cx="50" cy="133" r="5" fill={color} />);
+        }
+    }
 
     // Helper function to render mouth based on mood
     const renderMouth = () => {
@@ -107,6 +140,9 @@ const PetCanvas = ({ color, mood, size = 200 }) => {
                     </filter>
                 </defs>
 
+                {/* Tail */}
+                {renderTail()}
+
                 {/* Body */}
                 <ellipse cx="50" cy="90" rx="30" ry="40" fill={color} />
                 <circle cx="50" cy="110" r="20" fill="pink" />
@@ -146,8 +182,13 @@ const PetCanvas = ({ color, mood, size = 200 }) => {
                 <ellipse cx="35" cy="120" rx="10" ry="15" fill={color} filter="url(#f2)" />
                 <ellipse cx="65" cy="120" rx="10" ry="15" fill={color} filter="url(#f2)" />
 
-                {/* Tail (optional for fun) */}
-                <circle cx="50" cy="133" r="5" fill={color} />
+                {/* Hair */}
+                <path
+                            d="M40 25 Q45 35 50 30 Q55 45 60 25"
+                            stroke="black"
+                            strokeWidth="1"
+                            fill="none"
+                        />
             </svg>
 
             {/* Mood Label */}

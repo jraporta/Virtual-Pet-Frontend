@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import LoginForm from '../LoginForm/LoginForm';
 import LogoutButton from '../LogoutButton/LogoutButton';
-import './Header.css'; // Import associated styles
+import '../../styles/Header.css'; // Import associated styles
 
 function Header() {
     const [username, setUsername] = useState(null);
