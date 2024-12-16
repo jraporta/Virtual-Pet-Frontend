@@ -2,22 +2,21 @@ import API from "./api";
 
 export const petService = {
 
-    /*
-    async getCharacteristics() {
+
+    async getValidPetTypes() {
         try {
             const response = await API.get(
-                '/api/enums'
+                '/api/metadata/pet-types'
             );
-            return response.json();
+            return response.data;
         } catch (error) {
             console.error('Failed to get characteristics:', error.response || error.message);
             throw error;
         }
     },
-    */
 
-    async getCharacteristics() {
-        return ({types: ['Dog', 'Cat', 'Hamster'], colors: ['red', 'green', 'blue']});
+    async getValidColors() {
+        return ({colors: ['BROWN', 'YELLOW', 'TURQUOISE']});
     },
 
     async registerPet(petData) {

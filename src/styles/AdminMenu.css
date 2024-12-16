@@ -1,0 +1,67 @@
+.admin-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #f8f9fa;
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    z-index: 1000;
+}
+
+.admin-menu.visible {
+    transform: translateX(0);
+}
+
+.admin-menu .toggle-button {
+    position: absolute;
+    bottom: 200px;
+    left: -156px;
+    transform: rotate(-90deg);
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px 4px 0 0;
+}
+
+.admin-menu .toggle-button:hover {
+    background-color: #0056b3;
+}
+
+.admin-menu .menu-content {
+    margin-top: 50px;
+    width: 100%;
+}
+
+.admin-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admin-menu li {
+    margin-bottom: 16px;
+}
+
+.admin-menu button {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: left;
+}
+
+.admin-menu button:hover {
+    background-color: #0056b3;
+}

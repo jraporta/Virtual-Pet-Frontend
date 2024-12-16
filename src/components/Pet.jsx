@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PetCanvas from "../components/PetCanvas";
+import PetCanvas from "./PetCanvas";
 
 const Pet = () => {
 

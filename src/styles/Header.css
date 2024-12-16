@@ -1,14 +1,14 @@
 :root {
   /* Color Palette */
-  --primary-green: #3C9A4D;  /* Turtle shell green */
-  --secondary-green: #73D479; /* Mutant glow */
-  --accent-orange: #FF8800;  /* Michelangelo's bandana */
-  --accent-blue: #0074D9;    /* Leonardo's bandana */
-  --accent-red: #FF4136;     /* Raphael's bandana */
-  --accent-purple: #B10DC9;  /* Donatello's bandana */
-  --neutral-gray: #F5F5F5;   /* Background */
-  --text-dark: #333333;      /* Text color */
-  --text-light: #FFFFFF;     /* Light text */
+  --primary-green: #3C9A4D;
+  --secondary-green: #73D479;
+  --accent-orange: #FF8800;
+  --accent-blue: #0074D9;
+  --accent-red: #FF4136;
+  --accent-purple: #B10DC9;
+  --neutral-gray: #F5F5F5;
+  --text-dark: #333333;
+  --text-light: #FFFFFF;
 
   /* Font */
   --font-primary: 'Comic Sans MS', 'Arial', sans-serif;

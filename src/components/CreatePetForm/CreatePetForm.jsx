@@ -14,9 +14,10 @@ function CreatePetForm() {
   useEffect(() => {
     async function fetchCharacteristics() {
       try {
-        const data = await petService.getCharacteristics();
-        setTypes(data.types);
-        setColors(data.colors);
+        const typesData = await petService.getValidPetTypes();
+        const colorsData = await petService.getValidColors();
+        setTypes(typesData.types);
+        setColors(colorsData.colors);
       } catch (err) {
         setError('Failed to load characteristics');
       }

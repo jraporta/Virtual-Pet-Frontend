@@ -5,7 +5,7 @@ import LoginPage from "../pages/LoginPage";
 import Dashboard from "../pages/Dashboard";
 import About from "../pages/About";
 import NotFound from "../pages/NotFound";
-import Pet from "../pages/Pet";
+import Pet from "../components/Pet";
 
 const AppRoutes = () => {
     return (

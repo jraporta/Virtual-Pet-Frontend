@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { petService } from '../../services/petService';
+import { petService } from '../services/petService';
 import { useNavigate } from 'react-router-dom';
-import '../../styles/PetList.css';
+import '../styles/PetList.css';
 
 function PetList() {
     const navigate = useNavigate();
@@ -9,15 +9,16 @@ function PetList() {
     const [activePet, setActivePet] = useState([]);
     const [error, setError] = useState('');
 
-    useEffect(() => {
-        async function fetchPets() {
-            try {
-                const data = await petService.getPets();
-                setPets(data);
-            } catch (err) {
-                setError('Failed to load pets');
-            }
+    async function fetchPets() {
+        try {
+            const data = await petService.getPets();
+            setPets(data);
+        } catch (err) {
+            setError('Failed to load pets');
         }
+    }
+
+    useEffect(() => {
         fetchPets();
     }, []);
 

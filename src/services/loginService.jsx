@@ -13,6 +13,8 @@ export const login = async (navigate, username, token) => {
 
 export const logout = async (navigate) => {
     localStorage.clear();
+    // Trigger re-check of admin role in AdminMenu
+    window.dispatchEvent(new Event('storage'));
     navigate('/');
 }
 
@@ -21,4 +23,6 @@ export const updateUserData = async (username) => {
     localStorage.setItem('id', data.id);
     localStorage.setItem('role', data.role);
     localStorage.setItem('pets', data.pets);
+    // Trigger re-check of admin role in AdminMenu
+    window.dispatchEvent(new Event('storage'));
 }

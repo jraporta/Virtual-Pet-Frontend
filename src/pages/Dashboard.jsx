@@ -1,6 +1,6 @@
 import React from 'react';
 import CreatePetForm from '../components/CreatePetForm/CreatePetForm';
-import PetList from '../components/PetList/PetList';
+import PetList from '../components/PetList';
 
 const Dashboard = () => {
 
