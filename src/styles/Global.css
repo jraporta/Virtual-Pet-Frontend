@@ -1,6 +1,6 @@
 :root {
     /* Color Palette */
-    --primary-green: #3C9A4D;  /* Turtle shell green */
+    --primary-blue: #282c34;  /* Turtle shell green */
     --secondary-green: #73D479; /* Mutant glow */
     --accent-orange: #FF8800;  /* Michelangelo's bandana */
     --accent-blue: #0074D9;    /* Leonardo's bandana */
@@ -23,7 +23,7 @@ body {
 }
 
 header {
-    background-color: var(--primary-green);
+    background-color: var(--primary-blue);
     color: var(--text-light);
     padding: 20px;
     text-align: center;
@@ -45,12 +45,10 @@ button:hover {
 }
 
 .login-form {
-    background: var(--secondary-green);
     padding: 20px;
     border-radius: 10px;
     max-width: 400px;
     margin: 20px auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .pet-list {
@@ -62,7 +60,7 @@ button:hover {
 }
 
 .pet-card {
-    background-color: var(--primary-green);
+    background-color: var(--primary-blue);
     color: var(--text-light);
     padding: 15px;
     border-radius: 10px;
@@ -76,7 +74,7 @@ button:hover {
 }
 
 footer {
-    background-color: var(--primary-green);
+    background-color: var(--primary-blue);
     color: var(--text-light);
     padding: 10px;
     text-align: center;

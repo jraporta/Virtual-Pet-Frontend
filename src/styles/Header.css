@@ -1,6 +1,6 @@
 :root {
   /* Color Palette */
-  --primary-green: #3C9A4D;
+  --primary-blue: #282c34;
   --secondary-green: #73D479;
   --accent-orange: #FF8800;
   --accent-blue: #0074D9;
@@ -17,7 +17,7 @@
 body {
   font-family: var(--font-primary);
   background-color: var(--neutral-gray);
-  color: var(--text-dark);
+  color: var(--text-light);
   margin: 0;
   padding: 0;
 }
@@ -27,7 +27,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: var(--primary-green);
+  background-color: var(--primary-blue);
   color: var(--text-light);
   border-bottom: 5px solid var(--accent-orange);
 }

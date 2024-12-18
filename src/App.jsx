@@ -4,7 +4,7 @@ import AppRoutes from './routes/AppRoutes';
 import Header from './components/Header/Header';
 import AdminMenu from './components/AdminMenu';
 //import Footer from './components/Footer/Fotter';
-//import './styles/global.css';
+import './styles/global.css';
 
 function App() {
     return (

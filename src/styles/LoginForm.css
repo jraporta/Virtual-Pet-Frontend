@@ -1,43 +1,59 @@
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #282c34;
-    color: white;
-  }
-  
-  .logo a {
-    text-decoration: none;
-    color: #61dafb;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .nav {
-    display: flex;
-  }
-  
-  .nav-list {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .nav-link {
-    text-decoration: none;
-    color: white;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-link:hover {
-    color: #61dafb;
-  }
-  
-  .nav-link.active {
-    border-bottom: 2px solid #61dafb;
-  }
-  
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Aligns the inputs and buttons to the right */
+  max-width: 400px; /* Optional: Limits form width */
+  margin: 0 auto; /* Centers the form horizontally on the page */
+}
+
+.input-container {
+  width: 100%; /* Makes input fields take up the full width of the form */
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Adds space between input fields */
+}
+
+.login-input {
+  padding: 10px 12px; /* Adds padding for better usability */
+  font-size: 1rem; /* Makes the text more readable */
+  width: 100%; /* Ensures the input boxes stretch to the container width */
+  max-width: 300px; /* Optional: Sets a maximum width for the inputs */
+  margin-left: auto; /* Aligns the inputs to the right */
+  border: 1px solid #ccc; /* Adds a subtle border */
+  border-radius: 4px; /* Adds rounded corners */
+}
+
+.button-container {
+  display: flex;
+  align-items: center; /* Vertically aligns buttons and "or" text */
+  justify-content: flex-end; /* Aligns buttons to the right */
+  gap: 8px; /* Adds space between buttons and the "or" text */
+  margin-top: 16px; /* Adds space above the buttons */
+}
+
+.login-button {
+  padding: 8px 16px; /* Adds padding for a better button size */
+  font-size: 1rem; /* Increases button text size */
+  border: none; /* Removes default border */
+  border-radius: 4px; /* Adds rounded corners */
+  background-color: #007bff; /* Adds a blue background */
+  color: white; /* Ensures text is readable */
+  cursor: pointer; /* Adds a pointer cursor */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.login-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.separator {
+  margin: 0 8px; /* Adds space around the "or" text */
+  color: #666; /* Subtle color for the text */
+}
+
+.error-message {
+  color: red;
+  font-size: 0.875rem; /* Slightly smaller text for errors */
+  margin-top: 8px;
+  text-align: right; /* Aligns the error message to the right */
+}

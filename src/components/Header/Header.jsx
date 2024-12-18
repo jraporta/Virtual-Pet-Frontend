@@ -2,13 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import LoginForm from '../LoginForm/LoginForm';
 import LogoutButton from './LogoutButton';
-import '../../styles/Header.css'; // Import associated styles
+import '../../styles/Header.css';
 
 function Header() {
     const [username, setUsername] = useState(null);
 
+    const checkUsername = () => {
+        const name = localStorage.getItem('username') || {};
+        setUsername(name);
+    };
+
     useEffect(() =>{
-        setUsername(localStorage.getItem('username'));
+        const handleStorageChange = () => checkUsername();
+        window.addEventListener('storage', handleStorageChange);
+
+        return () => {
+            window.removeEventListener('storage', handleStorageChange);
+        };
     }, []);
 
     const handleLogin = (credentials) => {

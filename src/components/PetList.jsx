@@ -30,7 +30,6 @@ function PetList() {
 
     return (
         <div className="pet-list">
-            <h2>Pet List</h2>
             {error && <p className="error">{error}</p>}
             <div className="pet-container">
                 {pets.map((pet) => (

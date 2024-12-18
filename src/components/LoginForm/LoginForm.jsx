@@ -44,35 +44,39 @@ const LoginForm = ({ onLogin }) => {
 
   return (
     <form className="login-form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        className="login-input"
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        className="login-input"
-      />
-      <br/>
-      <button
-        type="button"
-        className="login-button"
-        onClick={(e) => handleSubmit(e, 'login')}
-      >
-        Log In
-      </button>
-      <button
-        type="button"
-        className="login-button"
-        onClick={(e) => handleSubmit(e, 'register')}
-      >
-        Register
-      </button>
+      <div className="input-container">
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          className="login-input"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="login-input"
+        />
+      </div>
+      <div className="button-container">
+        <button
+          type="button"
+          className="login-button"
+          onClick={(e) => handleSubmit(e, 'login')}
+        >
+          Log In
+        </button>
+        <span className="separator">or</span>
+        <button
+          type="button"
+          className="login-button"
+          onClick={(e) => handleSubmit(e, 'register')}
+        >
+          Register
+        </button>
+      </div>
       {error && <p className="error-message">{error}</p>}
     </form>
   );
