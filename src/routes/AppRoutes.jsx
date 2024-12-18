@@ -2,8 +2,8 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import LoginPage from "../pages/LoginPage";
+import Contact from "../pages/Contact"
 import Dashboard from "../pages/Dashboard";
-import About from "../pages/About";
 import NotFound from "../pages/NotFound";
 import Pet from "../components/Pet";
 
@@ -13,7 +13,7 @@ const AppRoutes = () => {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/pet" element={<Pet />} />
             <Route path="*" element={<NotFound />} /> {/* Catch-all route */}
         </Routes>

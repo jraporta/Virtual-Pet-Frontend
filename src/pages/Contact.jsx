@@ -1,9 +1,7 @@
 
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import React from 'react';
 
-const About = () => {
+const Contact = () => {
     
     return (
         <div>
@@ -12,5 +10,5 @@ const About = () => {
     );
 };
 
-export default About;
+export default Contact;
                 

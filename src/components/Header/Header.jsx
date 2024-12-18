@@ -30,18 +30,10 @@ function Header() {
                 <ul className="nav-list">
                     <li>
                         <NavLink
-                            to="/"
+                            to={!username ? "/login" : "/dashboard"}
                             className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
                         >
-                            Home
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/about"
-                            className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-                        >
-                            About
+                            My Pets
                         </NavLink>
                     </li>
                     <li>
@@ -50,14 +42,6 @@ function Header() {
                             className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
                         >
                             Contact
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/login"
-                            className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-                        >
-                            Log In
                         </NavLink>
                     </li>
                 </ul>
