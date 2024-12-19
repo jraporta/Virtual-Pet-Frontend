@@ -1,22 +1,33 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import CreatePetForm from '../components/CreatePetForm/CreatePetForm';
 import PetList from '../components/PetList';
+import { petService } from '../services/petService';
 import '../styles/Dashboard.css';
 
 const Dashboard = () => {
     const [petFormIsVisible, setPetFormIsVisible] = useState(false);
+    const [pets, setPets] = useState([]);
+    const [error, setError] = useState('');
 
-    // Reference to PetList's fetchPets function
-    const petListRef = useRef();
+    async function fetchPets() {
+        try {
+            const data = await petService.getPets();
+            setPets(data);
+        } catch (err) {
+            setError('Failed to load pets');
+        }
+    }
+
+    useEffect(() => {
+        fetchPets();
+    }, []);
 
     const toggleFormVisibility = () => {
         setPetFormIsVisible((prev) => !prev);
     };
 
     const handleFormSubmit = () => {
-        if (petListRef.current) {
-            petListRef.current(); // Trigger fetchPets in PetList
-        }
+        fetchPets();
     };
 
     return (
@@ -36,9 +47,10 @@ const Dashboard = () => {
             )}
 
             <div>
+                {error && <p className="error">{error}</p>}
                 <PetList
-                    onShowForm={toggleFormVisibility}
-                    ref={petListRef}
+                    pets={pets}
+                    onAddPetClick={toggleFormVisibility}
                 />
             </div>
         </div>

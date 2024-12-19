@@ -43,13 +43,19 @@ const LoginForm = ({ onLogin }) => {
   };
 
   return (
-    <form className="login-form" onSubmit={handleSubmit}>
+    <form className="login-form" onSubmit={(e) => {
+      e.preventDefault();
+      // Form validation will automatically happen before this is called
+      const action = e.nativeEvent.submitter.value; // 'login' or 'register'
+      handleSubmit(e, action);
+    }}>
       <div className="input-container">
         <input
           type="text"
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          required
           className="login-input"
         />
         <input
@@ -57,22 +63,23 @@ const LoginForm = ({ onLogin }) => {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
           className="login-input"
         />
       </div>
       <div className="button-container">
         <button
-          type="button"
+          type="submit"
+          value="login"
           className="login-button"
-          onClick={(e) => handleSubmit(e, 'login')}
         >
           Log In
         </button>
         <span className="separator">or</span>
         <button
-          type="button"
+          type="submit"
+          value="register"
           className="login-button"
-          onClick={(e) => handleSubmit(e, 'register')}
         >
           Register
         </button>

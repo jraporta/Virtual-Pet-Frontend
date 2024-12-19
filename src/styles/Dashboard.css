@@ -10,34 +10,6 @@
     margin-bottom: 20px;
   }
   
-  /* Toggle Button */
-  .toggle-form-button {
-    font-size: 24px;
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .toggle-form-button.open {
-    background-color: #28a745; /* Green */
-    color: white;
-  }
-  
-  .toggle-form-button.close {
-    background-color: #dc3545; /* Red */
-    color: white;
-  }
-  
-  .toggle-form-button:hover {
-    transform: scale(1.1);
-  }
-  
   /* Popup Overlay */
   .popup-overlay {
     position: fixed;

@@ -1,40 +1,18 @@
-import React, { useEffect, useState, forwardRef, useImperativeHandle } from 'react';
-import { petService } from '../services/petService';
+import React from 'react';
+
 import { useNavigate } from 'react-router-dom';
 import '../styles/PetList.css';
 
-const PetList = forwardRef((props, ref) => {
+const PetList = ({ pets, onAddPetClick }) => {
     const navigate = useNavigate();
-    const [pets, setPets] = useState([]);
-    const [error, setError] = useState('');
-
-    async function fetchPets() {
-        try {
-            const data = await petService.getPets();
-            setPets(data);
-        } catch (err) {
-            setError('Failed to load pets');
-        }
-    }
-
-    // Expose fetchPets to parent component through ref
-    useImperativeHandle(ref, () => ({
-        fetchPets,
-    }));
-
-    useEffect(() => {
-        fetchPets();
-    }, []);
 
     const handlePetClick = (pet) => {
         console.log('Pet clicked:', pet);
-        setActivePet(pet);
         navigate('/pet', { state: { pet } });
     };
 
     return (
         <div className="pet-list">
-            {error && <p className="error">{error}</p>}
             <div className="pet-container">
                 {pets.map((pet) => (
                     <button
@@ -72,13 +50,13 @@ const PetList = forwardRef((props, ref) => {
                     </button>
                 ))}
                 {/* Final blank card */}
-                <button className="pet-card add-pet-card" onClick={props.onShowForm}>
+                <button className="pet-card add-pet-card" onClick={onAddPetClick}>
                     <div className="add-icon">+</div>
                     <p>Add a new pet</p>
                 </button>
             </div>
         </div>
     );
-});
+}
 
 export default PetList;

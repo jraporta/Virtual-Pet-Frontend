@@ -37,7 +37,7 @@ const CreatePetForm = ({ onFormSubmit }) => {
       setName('');
       setType('');
       setColor('');
-      onFormSubmit(); // Trigger fetchPets
+      onFormSubmit();
     } catch (err) {
       setError(err.message || 'Failed to register pet');
     }
