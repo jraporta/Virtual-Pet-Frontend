@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/AdminMenu.css';
 
 function AdminMenu() {
+    const navigate = useNavigate();
     const [isVisible, setIsVisible] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false);
 
@@ -38,12 +40,18 @@ function AdminMenu() {
                 <h3>Admin Menu</h3>
                 <ul>
                     <li>
-                        <button onClick={() => console.log('Show all users')}>
+                        <button onClick={() => {
+                            console.log('Show all users')
+                            navigate('/admin/users')
+                        }}>
                             Show All Users
                         </button>
                     </li>
                     <li>
-                        <button onClick={() => console.log('Show all pets')}>
+                        <button onClick={() => {
+                            console.log('Show all pets')
+                            navigate('/admin/pets')
+                        }}>
                             Show All Pets
                         </button>
                     </li>

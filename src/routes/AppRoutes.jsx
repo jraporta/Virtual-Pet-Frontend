@@ -6,6 +6,8 @@ import Contact from "../pages/Contact"
 import Dashboard from "../pages/Dashboard";
 import NotFound from "../pages/NotFound";
 import Pet from "../components/Pet";
+import ShowUsers from "../pages/AdminUsersDashboard";
+import ShowPets from "../pages/AdminPetsDashboard";
 
 const AppRoutes = () => {
     return (
@@ -15,6 +17,8 @@ const AppRoutes = () => {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/pet" element={<Pet />} />
+            <Route path="admin/pets" element={<ShowPets />} />
+            <Route path="admin/users" element={<ShowUsers />} />
             <Route path="*" element={<NotFound />} /> {/* Catch-all route */}
         </Routes>
     );

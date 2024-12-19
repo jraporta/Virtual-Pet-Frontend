@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import CreatePetForm from '../components/CreatePetForm/CreatePetForm';
 import PetList from '../components/PetList';
 import { petService } from '../services/petService';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Dashboard.css';
 
 const Dashboard = () => {
+    const navigate = useNavigate();
     const [petFormIsVisible, setPetFormIsVisible] = useState(false);
     const [pets, setPets] = useState([]);
     const [error, setError] = useState('');
@@ -19,6 +21,7 @@ const Dashboard = () => {
     }
 
     useEffect(() => {
+        if (!localStorage.user) navigate('/login');
         fetchPets();
     }, []);
 
