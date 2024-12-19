@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, forwardRef, useImperativeHandle } from 'react';
 import { petService } from '../services/petService';
 import { useNavigate } from 'react-router-dom';
 import '../styles/PetList.css';
 
-function PetList() {
+const PetList = forwardRef((props, ref) => {
     const navigate = useNavigate();
     const [pets, setPets] = useState([]);
-    const [activePet, setActivePet] = useState([]);
     const [error, setError] = useState('');
 
     async function fetchPets() {
@@ -18,6 +17,11 @@ function PetList() {
         }
     }
 
+    // Expose fetchPets to parent component through ref
+    useImperativeHandle(ref, () => ({
+        fetchPets,
+    }));
+
     useEffect(() => {
         fetchPets();
     }, []);
@@ -25,7 +29,7 @@ function PetList() {
     const handlePetClick = (pet) => {
         console.log('Pet clicked:', pet);
         setActivePet(pet);
-        navigate('/pet');
+        navigate('/pet', { state: { pet } });
     };
 
     return (
@@ -67,9 +71,14 @@ function PetList() {
                         <p>State: {pet.state}</p>
                     </button>
                 ))}
+                {/* Final blank card */}
+                <button className="pet-card add-pet-card" onClick={props.onShowForm}>
+                    <div className="add-icon">+</div>
+                    <p>Add a new pet</p>
+                </button>
             </div>
         </div>
     );
-}
+});
 
 export default PetList;

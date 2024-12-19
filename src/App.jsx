@@ -11,10 +11,10 @@ function App() {
         <Router>
             <div className='app'>
                 <Header />
+                <AdminMenu />
                 <main>
                 <AppRoutes />
                 </main>
-                <AdminMenu />
             </div>
         </Router>
     );

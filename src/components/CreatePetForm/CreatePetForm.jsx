@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { petService } from '../../services/petService';
 import '../../styles/CreatePetForm.css'
 
-function CreatePetForm() {
+const CreatePetForm = ({ onFormSubmit }) => {
   const [name, setName] = useState('');
   const [type, setType] = useState('');
   const [color, setColor] = useState('');
@@ -37,6 +37,7 @@ function CreatePetForm() {
       setName('');
       setType('');
       setColor('');
+      onFormSubmit(); // Trigger fetchPets
     } catch (err) {
       setError(err.message || 'Failed to register pet');
     }

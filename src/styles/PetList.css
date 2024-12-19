@@ -1,50 +1,37 @@
-.pet-list {
-    padding: 16px;
-}
 .pet-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
-}
-.pet-card {
-    border: 1px solid #ccc;
+    gap: 20px;
+    justify-content: flex-start;
+  }
+  
+  .pet-card {
+    width: 200px;
+    height: 300px;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 16px;
-    width: 150px;
+    padding: 10px;
     text-align: center;
-    background-color: white;
+    background: #f9f9f9;
+    transition: transform 0.3s;
     cursor: pointer;
-    display: inline-block; /* Ensures proper spacing */
-    text-decoration: none;
-    color: inherit;
-}
-
-.pet-card:focus,
-.pet-card:hover {
-    outline: none;
-    border-color: #007bff; /* Highlight border on focus or hover */
-    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
-}
-.pet-image {
-    width: 100%;
-    border-radius: 8px;
-}
-.progress-bar {
-    margin-top: 8px;
-}
-.progress-track {
-    background-color: #eee;
-    height: 8px;
-    width: 100%;
-    border-radius: 4px;
-    overflow: hidden;
-}
-.progress-fill {
-    height: 100%;
-}
-.progress-fill.happiness {
-    background-color: #4caf50;
-}
-.progress-fill.hunger {
-    background-color: #f44336;
-}
+  }
+  
+  .pet-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .add-pet-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #28a745;
+    background: #eaffea;
+  }
+  
+  .add-icon {
+    font-size: 48px;
+    color: #28a745;
+  }
+  
