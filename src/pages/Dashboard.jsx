@@ -3,6 +3,7 @@ import CreatePetForm from '../components/CreatePetForm/CreatePetForm';
 import PetList from '../components/PetList';
 import { petService } from '../services/petService';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import '../styles/Dashboard.css';
 
 const Dashboard = () => {
@@ -10,6 +11,7 @@ const Dashboard = () => {
     const [petFormIsVisible, setPetFormIsVisible] = useState(false);
     const [pets, setPets] = useState([]);
     const [error, setError] = useState('');
+    const { isAuthenticated, user } = useAuth();
 
     async function fetchPets() {
         try {
@@ -21,9 +23,11 @@ const Dashboard = () => {
     }
 
     useEffect(() => {
-        if (!localStorage.user) navigate('/login');
+        if (!isAuthenticated){
+            navigate('/login');
+        } 
         fetchPets();
-    }, []);
+    }, [isAuthenticated]);
 
     const toggleFormVisibility = () => {
         setPetFormIsVisible((prev) => !prev);

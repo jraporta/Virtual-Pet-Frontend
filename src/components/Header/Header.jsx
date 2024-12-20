@@ -1,34 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import LoginForm from '../LoginForm/LoginForm';
+import LoginForm from '../auth/LoginForm';
 import LogoutButton from './LogoutButton';
+import { useAuth } from '../../context/AuthContext';
 import '../../styles/Header.css';
 
 function Header() {
-    const [username, setUsername] = useState(null);
-
-    const checkUsername = () => {
-        const name = localStorage.getItem('username') || {};
-        setUsername(name);
-    };
+    const { isAuthenticated, user } = useAuth();
 
     useEffect(() =>{
-        const handleStorageChange = () => checkUsername();
-        window.addEventListener('storage', handleStorageChange);
-
-        return () => {
-            window.removeEventListener('storage', handleStorageChange);
-        };
-    }, []);
+        console.log('Header rendered or updated');
+    }, [isAuthenticated]);
 
     const handleLogin = (credentials) => {
-        console.log('Login attempt from Header', credentials);
-        setUsername(credentials);
+        console.log('Login attempt from Header: ', credentials);
     }
 
     const handleLogout = () => {
-        console.log('Logout success from Header');
-        setUsername(null);
+        console.log('Logout attempt from Header');
     }
 
     return (
@@ -40,7 +29,7 @@ function Header() {
                 <ul className="nav-list">
                     <li>
                         <NavLink
-                            to={!username ? "/login" : "/dashboard"}
+                            to="/dashboard"
                             className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
                         >
                             My Pets
@@ -57,14 +46,14 @@ function Header() {
                 </ul>
             </nav>
             <div>
-                {!username ? (
+                { isAuthenticated && user ? (
                     <div>
-                        <LoginForm onLogin={handleLogin} />
-                    </div>
+                    <p>Welcome {user.username}!</p>
+                    <LogoutButton onLogout={handleLogout} />
+                </div>
                 ) : (
                     <div>
-                        <p>Welcome {localStorage.getItem('username')}!</p>
-                        <LogoutButton onLogout={handleLogout} />
+                        <LoginForm onLogin={handleLogin} />
                     </div>
                 )
                 }

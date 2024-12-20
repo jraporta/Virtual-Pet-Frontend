@@ -1,34 +1,39 @@
 import React, { useState } from 'react';
+import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { loginRequest, registerRequest } from '../../services/authService';
-import { login } from '../../services/loginService';
+import { useLocation } from 'react-router-dom';
 import '../../styles/LoginForm.css';
 
 const LoginForm = ({ onLogin }) => {
+  const { login, register } = useAuth();
+  const location = useLocation();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const [credentials, setCredentials] = React.useState({ username: '', password: '' });
 
   const handleLogin = async () => {
+    if (onLogin) onLogin(credentials);
     try {
-      const token = await loginRequest(username, password);
-      login(navigate, username, token);
-      console.log('Login successful:', token);
-      onLogin(username);
+      await login(credentials);
+      console.log('Login successful');
+      const from = location.state?.from?.pathname || '/';
+      navigate(from, { replace: true });
     } catch (err) {
-      setError(err.response?.data?.message || 'Login failed. Please try again.');
+      setError(err.response?.data || 'Login failed. Please try again.');
       console.error('Login failed', err);
     }
   };
 
   const handleRegister = async () => {
     try {
-      const token = await registerRequest(username, password);
-      login(navigate, username, token);
+      await register(credentials);
       console.log('Register successful:', token);
+      const from = location.state?.from?.pathname || '/';
+      navigate(from, { replace: true });
     } catch (err) {
-      setError(err.response?.data?.message || 'Register failed. Please try again.');
+      setError(err.response?.data || 'Register failed. Please try again.');
       console.error('Register failed', err);
     }
   };
@@ -54,7 +59,10 @@ const LoginForm = ({ onLogin }) => {
           type="text"
           placeholder="Username"
           value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={(e) => {
+            setUsername(e.target.value)
+            setCredentials(prev => ({ ...prev, username: e.target.value }))
+          }}
           required
           className="login-input"
         />
@@ -62,7 +70,10 @@ const LoginForm = ({ onLogin }) => {
           type="password"
           placeholder="Password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => {
+            setPassword(e.target.value)
+            setCredentials(prev => ({ ...prev, password: e.target.value }))
+          }}
           required
           className="login-input"
         />

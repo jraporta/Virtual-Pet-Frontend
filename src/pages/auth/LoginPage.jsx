@@ -1,11 +1,11 @@
 import React from 'react';
-import LoginForm from '../components/LoginForm/LoginForm';
+import LoginForm from '../../components/auth/LoginForm';
 
 
 const LoginPage = () => {
     
     const handleLogin = (credentials) => {
-        console.log('Login attempt from LoginPage:', credentials);
+        console.log('Login attempt from LoginPage: ', credentials);
     };
 
     return (
@@ -17,4 +17,3 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
-                
