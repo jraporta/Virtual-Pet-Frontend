@@ -46,6 +46,20 @@ export const petService = {
         }
     },
 
+    async deletePet(pet) {
+        try {
+            const response = await API.delete('/api/pets/' + pet.id);
+            if (response.status === 204) {
+                console.log('Pet deleted');
+            } else {
+                console.error(response.data.message);
+            }
+        } catch (error) {
+            console.error('Failed to delete pet:', error.response || error.message);
+            throw error;
+        }
+    },
+
     async getPets() {
         try {
             const response = await API.get('/api/pets');

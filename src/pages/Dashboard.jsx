@@ -16,6 +16,7 @@ const Dashboard = () => {
         try {
             const data = await petService.getPets();
             setPets(data);
+            console.log('Pet list updated from DB.');
         } catch (err) {
             setError('Failed to load pets');
         }
@@ -30,7 +31,6 @@ const Dashboard = () => {
     };
 
     const handleFormSubmit = () => {
-        console.log('Updating pet list after adding new pet.');
         fetchPets();
     };
 
@@ -55,6 +55,7 @@ const Dashboard = () => {
                 <PetList
                     pets={pets}
                     onAddPetClick={toggleFormVisibility}
+                    onDeletePetClick={fetchPets}
                 />
             </div>
         </div>
