@@ -6,7 +6,7 @@ const Unauthorized = () => {
     return (
         <div>
             <h1>Error 401</h1>
-            <p>Unauthorized</p>
+            <h3>Unauthorized</h3>
         </div>
     );
 };
