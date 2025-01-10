@@ -11,7 +11,6 @@ const Dashboard = () => {
     const [petFormIsVisible, setPetFormIsVisible] = useState(false);
     const [pets, setPets] = useState([]);
     const [error, setError] = useState('');
-    const { isAuthenticated, user } = useAuth();
 
     async function fetchPets() {
         try {
@@ -23,17 +22,15 @@ const Dashboard = () => {
     }
 
     useEffect(() => {
-        if (!isAuthenticated){
-            navigate('/login');
-        } 
         fetchPets();
-    }, [isAuthenticated]);
+    }, []);
 
     const toggleFormVisibility = () => {
         setPetFormIsVisible((prev) => !prev);
     };
 
     const handleFormSubmit = () => {
+        console.log('Updating pet list after adding new pet.');
         fetchPets();
     };
 
