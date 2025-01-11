@@ -11,3 +11,16 @@ export const userDataRequest = async (username) => {
         throw error;
     }
 }
+
+export const userService = {
+
+    async getUsers() {
+        try {
+            const response = await API.get('/admin/users');
+            return response.data;
+        } catch (error) {
+            console.error('Failed to fetch users:', error.response || error.message);
+            throw error;
+        }
+    },
+};

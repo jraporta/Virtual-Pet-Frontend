@@ -1,0 +1,88 @@
+.user-list {
+  width: 80%;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+}
+
+.user-list-header,
+.user-list-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  gap: 10px;
+  padding: 10px;
+  align-items: center;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.user-list-header {
+  font-weight: bold;
+  background-color: #f0f0f0;
+  border-bottom: 2px solid #ccc;
+}
+
+.user-information {
+  display: contents;
+}
+
+.input-name,
+.input-id,
+.input-role {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.user-save-button,
+.user-delete-button,
+.user-edit-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  width: 50%;
+}
+
+.user-edit-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.user-save-button {
+  background-color: #2196f3;
+  color: white;
+}
+
+.user-delete-button {
+  background-color: #f44336;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.input-role {
+  font-size: 14px;
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .user-list-header,
+  .user-list-row {
+      grid-template-columns: 1fr 1fr;
+  }
+  button {
+      font-size: 12px;
+      padding: 5px;
+  }
+}
