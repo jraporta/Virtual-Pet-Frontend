@@ -3,7 +3,7 @@ import { petService } from '../services/petService';
 import { useNavigate } from 'react-router-dom';
 import '../styles/PetList.css';
 
-const PetList = ({ pets, onAddPetClick, onDeletePetClick }) => {
+const PetList = ({ pets, onAddPetClick = null, onDeletePetClick, showAddCard = true }) => {
     const navigate = useNavigate();
 
     const handlePetClick = (pet) => {
@@ -64,10 +64,12 @@ const PetList = ({ pets, onAddPetClick, onDeletePetClick }) => {
                     </div>
                 ))}
                 {/* Final blank card */}
-                <button className="pet-card add-pet-card" onClick={onAddPetClick}>
-                    <div className="add-icon">+</div>
-                    <p>Add a new pet</p>
-                </button>
+                {showAddCard && (
+                    <button className="pet-card add-pet-card" onClick={onAddPetClick}>
+                        <div className="add-icon">+</div>
+                        <p>Add a new pet</p>
+                    </button>
+                )}
             </div>
         </div>
     );

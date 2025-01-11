@@ -71,6 +71,17 @@ export const petService = {
         }
     },
 
+    async getAllUsersPets() {
+        try {
+            const response = await API.get('/admin/pets');
+            const pets = response.data.map(this.mockPet);
+            return pets;
+        } catch (error) {
+            console.error('Failed to fetch pets:', error.response || error.message);
+            throw error;
+        }
+    },
+
     mockPet(pet) {
         const states = [];
 
