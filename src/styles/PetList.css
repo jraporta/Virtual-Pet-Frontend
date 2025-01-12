@@ -24,6 +24,11 @@
   cursor: pointer;
 }
 
+.pet-info-panel-compact {
+  background-color: transparent;
+  color: var(--text-light);
+}
+
 .pet-card:hover {
   background-color: var(--accent-purple);
   transform: translateY(-5px);

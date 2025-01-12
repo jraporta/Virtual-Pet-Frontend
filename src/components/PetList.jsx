@@ -1,6 +1,7 @@
 import React from 'react';
 import { petService } from '../services/petService';
 import { useNavigate } from 'react-router-dom';
+import PetInfoPanel from './PetInfoPanel';
 import '../styles/PetList.css';
 
 const PetList = ({ pets, onAddPetClick = null, onDeletePetClick, showAddCard = true }) => {
@@ -32,28 +33,7 @@ const PetList = ({ pets, onAddPetClick = null, onDeletePetClick, showAddCard = t
                                 alt={pet.name}
                                 className="pet-image"
                             />
-                            <h3>{pet.name}</h3>
-                            <p>Type: {pet.type}</p>
-                            <p>Color: {pet.color}</p>
-                            <div className="progress-bar">
-                                <label>Happiness:</label>
-                                <div className="progress-track">
-                                    <div
-                                        className="progress-fill happiness"
-                                        style={{ width: `${pet.happiness}%` }}
-                                    ></div>
-                                </div>
-                            </div>
-                            <div className="progress-bar">
-                                <label>Hunger:</label>
-                                <div className="progress-track">
-                                    <div
-                                        className="progress-fill hunger"
-                                        style={{ width: `${pet.hunger}%` }}
-                                    ></div>
-                                </div>
-                            </div>
-                            <p>State: {pet.state}</p>
+                            <PetInfoPanel pet={pet} className="pet-info-panel-compact" />
                         </button>
                         <button
                             className="delete-button"

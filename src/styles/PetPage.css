@@ -35,7 +35,7 @@
     gap: 20px;
 }
 
-.pet-info-panel, 
+.pet-info-panel-extended, 
 .pet-interaction-panel {
     flex: 1;
     max-width: 300px;

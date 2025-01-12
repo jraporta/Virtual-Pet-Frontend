@@ -26,7 +26,7 @@ const Pet = () => {
             <h1 className="pet-page-title">Take Care of Your Pet!</h1>
             <button className="pet-page-back-button" onClick={() => navigate(-1)}>Return</button>
             <div className="pet-page-content">
-                <PetInfoPanel pet={pet} />
+                <PetInfoPanel pet={pet} className="pet-info-panel-extended" />
                 <PetCanvas pet={pet} />
                 <PetInteractionPanel pet={pet} />
             </div>
