@@ -5,7 +5,7 @@ import LoginPage from "../pages/auth/LoginPage";
 import Contact from "../pages/Contact"
 import Dashboard from "../pages/Dashboard";
 import NotFound from "../pages/NotFound";
-import Pet from "../components/Pet";
+import Pet from "../pages/Pet";
 import ShowUsers from "../pages/AdminUsersDashboard";
 import ShowPets from "../pages/AdminPetsDashboard";
 import Unauthorized from "../pages/Unauthorized";

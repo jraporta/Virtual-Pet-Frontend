@@ -1,0 +1,84 @@
+.pet-page {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.pet-page-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pet-page-back-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pet-page-back-button:hover {
+    background-color: #0056b3;
+}
+
+.pet-page-content {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Ensures all panels have the same height */
+    gap: 20px;
+}
+
+.pet-info-panel, 
+.pet-interaction-panel {
+    flex: 1;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+}
+
+.pet-interaction-panel {
+    background-color: #f1f1f1;
+}
+
+.pet-interaction-panel button {
+    margin: 5px 0;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pet-interaction-panel button:hover {
+    background-color: #218838;
+}
+
+.pet-canvas {
+    flex: 2;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pet-canvas-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}

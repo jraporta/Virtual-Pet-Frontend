@@ -10,3 +10,16 @@ export function getPetImage(species) {
             return 'data:image/jpeg;base64,...';
     }
 }
+
+export function getPetSVG(species) {
+    switch (species) {
+        case 'DOG':
+            return "../../public/assets/svg/dog.svg";
+        case 'CAT':
+            return "../../public/assets/svg/cat.svg";
+        case 'HAMSTER':
+            return "../../public/assets/svg/hamster.svg";
+        default:
+            return 'data:image/jpeg;base64,...';
+    }
+}

@@ -1,0 +1,87 @@
+#svg1 {
+    width: 300px;
+    height: 300px;
+}
+
+/* Tail movement */
+#tail {
+    animation: tail-sway 1.5s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes tail-sway {
+
+    0%,
+    100% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(-5deg);
+    }
+}
+
+/* Blinking eyes */
+@keyframes blink {
+
+    0%,
+    98%,
+    100% {
+        opacity: 1;
+    }
+
+    99% {
+        opacity: 0;
+    }
+}
+
+#left_eye,
+#right_eye {
+    animation: blink 4s infinite;
+}
+
+/* Tongue appear/disappear */
+#tongue {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover ears */
+#left_ear:hover {
+    transform: rotate(-5deg);
+    transition: transform 0.6s ease;
+}
+
+#right_ear:hover {
+    transform: rotate(5deg);
+    transition: transform 0.6s ease;
+}
+
+#left_ear {
+    transform-origin: 50px 50px;
+}
+
+#right_ear {
+    transform-origin: 0px 50px;
+}
+
+/* Whiskers move */
+@keyframes whisker-move {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+#wisker_1,
+#wisker_2,
+#wisker_3,
+#wisker_4 {
+    animation: whisker-move 2s ease-in-out infinite;
+    transform-origin: center;
+}
