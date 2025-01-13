@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { feedPet } from "../services/interactions/feed";
+import { playWithPet } from "../services/interactions/play";
 
 const PetInteractionPanel = ({ pet }) => {
     const [color, setColor] = useState("");
@@ -16,7 +17,12 @@ const PetInteractionPanel = ({ pet }) => {
         .catch(err => console.error('Error feeding pet'));
     };
 
-    const handlePlay = () => alert("Playing with the pet!");
+    const handlePlay = async () => {
+        playWithPet.play(pet)
+        .then(updatedPet => console.log('Played with pet'))
+        .catch(err => console.error('Error playing with pet'));
+    };
+
     const handleGroom = () => alert("Grooming the pet!");
 
     const handleToggleTongue = () => {
