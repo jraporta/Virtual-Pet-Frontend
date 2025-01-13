@@ -4,6 +4,7 @@ import Background1 from '/assets/background/forest.webp';
 import Background2 from '/assets/background/home.webp';
 import Background3 from '/assets/background/playground.webp';
 import '../styles/PetSVG.css';
+import '../styles/PetCanvas.css';
 
 const PetCanvas = () => {
   const [background, setBackground] = useState(Background1);
@@ -12,35 +13,21 @@ const PetCanvas = () => {
 
   return (
     <div
-      className="pet-container"
+      className="pet-canvas-container"
       style={{
-        position: "relative",
-        width: "500px",
-        height: "500px",
-        backgroundImage: `url(${background})`,
-        backgroundSize: "cover",
+        backgroundImage: `url(${background})`, // Dynamic background style
       }}
     >
       {/* Pet Image */}
-      <PetSVG />
-      <div
-        style={{
-          position: "absolute",
-          bottom: "20px",
-          left: "50%",
-          transform: "translateX(-50%)",
-        }}
-      >
-        <button onClick={() => changeBackground(Background2)}>
-          Change Background
-        </button>
-        <button onClick={() => setPetState("playing")}>Play</button>
-        <button onClick={() => updateAccessory("hat", "hat1.png")}>
-          Add Hat
-        </button>
-        <button onClick={() => updateAccessory("glasses", "glasses1.png")}>
-          Add Glasses
-        </button>
+      <div className="pet-svg-container">
+        <PetSVG />
+      </div>
+      
+      {/* Buttons */}
+      <div className="bg-button-container">
+        <button className="bg-button" onClick={() => changeBackground(Background1)}>Go to the forest</button>
+        <button className="bg-button" onClick={() => changeBackground(Background2)}>Go home</button>
+        <button className="bg-button" onClick={() => changeBackground(Background3)}>Go to the park</button>
       </div>
     </div>
   );

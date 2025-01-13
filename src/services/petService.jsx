@@ -60,6 +60,26 @@ export const petService = {
         }
     },
 
+    async updatePet(payload) {
+        try {
+            const response = await API.put(
+                '/api/pets',
+                payload,
+                { headers: { 'Content-Type': 'application/json' } }    
+            );
+            if (response.status === 200) {
+                console.log('Updated pet: ', response.data);
+                return response.data;
+            } else {
+                console.error('Error updating pet: ', response);
+                throw new Error('Unexpected error occurred');
+            }
+        } catch (error) {
+            console.error('Failed to update pet:', error.response || error.message);
+            throw error;
+        }
+    },
+
     async getPets() {
         try {
             const response = await API.get('/api/pets');
@@ -94,7 +114,7 @@ export const petService = {
         return {
             ...pet,
             type: pet.species ?? 'unknown',
-            energy: pet.energy ?? 75,
+            hunger: pet.energy ?? 75,
             happiness: pet.happiness ?? 60,
             state: states.join(', '),
             color: pet.color ?? 'blue',

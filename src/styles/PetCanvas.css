@@ -1,43 +1,40 @@
-/* Pet Component Styles */
-
-  
-  /* Mood Label Styles */
-  .pet-mood-label {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #333; /* Adjust color to match your theme */
+.pet-canvas-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
   }
   
-  .pet-svg {
-    transition: all 0.3s ease;
+  .pet-svg-container {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
   }
   
-  .waving .left-arm {
-    animation: wave 1s ease-in-out;
+  .bg-button-container {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 20px;
+    width: 100%;
   }
   
-  .blinking .eye {
-    animation: blink 0.3s ease;
+  .bg-button {
+    margin: 5px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    flex: 1; /* Makes the button take equal space */
   }
   
-  @keyframes wave {
-    0%, 100% {
-      transform: rotate(0deg);
-      transform-origin: 30% 55%;
-    }
-    50% {
-      transform: rotate(80deg);
-      transform-origin: 30% 55%;
-    }
-  }
-  
-  @keyframes blink {
-    0%, 100% {
-      r: 5;
-    }
-    50% {
-      r: 0;
-    }
+  .bg-button:hover {
+    background-color: #45a049;
   }
   
