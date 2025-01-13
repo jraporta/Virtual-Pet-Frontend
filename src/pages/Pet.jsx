@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from 'react-router-dom';
 import PetInfoPanel from "../components/PetInfoPanel";
 import PetInteractionPanel from "../components/PetInteractionPanel";
-import PetCanvas from "../components/PetCanvas";
+import PetCentralPanel from "../components/PetCentralPanel";
 import '../styles/PetPage.css';
 
 const Pet = () => {
@@ -31,7 +31,7 @@ const Pet = () => {
             <button className="pet-page-back-button" onClick={() => navigate(-1)}>Return</button>
             <div className="pet-page-content">
                 <PetInfoPanel pet={pet} className="pet-info-panel-extended" />
-                <PetCanvas pet={pet} />
+                <PetCentralPanel pet={pet} />
                 <PetInteractionPanel pet={pet} onPetUpdate={handlePetUpdate}/>
             </div>
         </div>
