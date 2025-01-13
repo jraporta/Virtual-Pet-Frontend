@@ -16,7 +16,7 @@ const PetInfoPanel = ({ pet, className }) => {
                 </div>
             </div>
             <div className="progress-bar">
-                <label>Hunger:</label>
+                <label>Energy:</label>
                 <div className="progress-track">
                     <div
                         className="progress-fill hunger"

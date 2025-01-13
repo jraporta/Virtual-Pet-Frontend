@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from 'react-router-dom';
 import PetInfoPanel from "../components/PetInfoPanel";
 import PetInteractionPanel from "../components/PetInteractionPanel";
@@ -8,14 +8,18 @@ import '../styles/PetPage.css';
 const Pet = () => {
     const location = useLocation();
     const navigate = useNavigate();
+    const [pet, setPet] = useState(location.state?.pet);
 
-    const pet = location.state?.pet;
 
     useEffect(() => {
         if (!pet) {
             navigate('/dashboard');
         }
     }, [pet, navigate]);
+
+    const handlePetUpdate = (updatedPet) => {
+        setPet(updatedPet);
+    };
     
     if (!pet) {
         return null;
@@ -28,7 +32,7 @@ const Pet = () => {
             <div className="pet-page-content">
                 <PetInfoPanel pet={pet} className="pet-info-panel-extended" />
                 <PetCanvas pet={pet} />
-                <PetInteractionPanel pet={pet} />
+                <PetInteractionPanel pet={pet} onPetUpdate={handlePetUpdate}/>
             </div>
         </div>
     );

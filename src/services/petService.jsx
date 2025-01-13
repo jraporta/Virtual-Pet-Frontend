@@ -69,7 +69,7 @@ export const petService = {
             );
             if (response.status === 200) {
                 console.log('Updated pet: ', response.data);
-                return response.data;
+                return this.mapToPet(response.data);
             } else {
                 console.error('Error updating pet: ', response);
                 throw new Error('Unexpected error occurred');
@@ -83,7 +83,7 @@ export const petService = {
     async getPets() {
         try {
             const response = await API.get('/api/pets');
-            const pets = response.data.map(this.mockPet);
+            const pets = response.data.map(this.mapToPet);
             return pets;
         } catch (error) {
             console.error('Failed to fetch pets:', error.response || error.message);
@@ -94,7 +94,7 @@ export const petService = {
     async getAllUsersPets() {
         try {
             const response = await API.get('/admin/pets');
-            const pets = response.data.map(this.mockPet);
+            const pets = response.data.map(this.mapToPet);
             return pets;
         } catch (error) {
             console.error('Failed to fetch pets:', error.response || error.message);
@@ -102,7 +102,7 @@ export const petService = {
         }
     },
 
-    mockPet(pet) {
+    mapToPet(pet) {
         const states = [];
 
         if (pet.dead) states.push('dead');

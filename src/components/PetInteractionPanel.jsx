@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { feedPet } from "../services/interactions/feed";
 import { playWithPet } from "../services/interactions/play";
 
-const PetInteractionPanel = ({ pet }) => {
+const PetInteractionPanel = ({ pet, onPetUpdate }) => {
     const [color, setColor] = useState("");
 
     useEffect(() => {
@@ -13,13 +13,19 @@ const PetInteractionPanel = ({ pet }) => {
 
     const handleFeed = async (food) => {
         feedPet.feedPet(pet, food)
-        .then(updatedPet => console.log('Pet was feeded'))
+        .then(updatedPet => {
+            onPetUpdate(updatedPet);
+            console.log('Pet was feeded');
+        })
         .catch(err => console.error('Error feeding pet'));
     };
 
     const handlePlay = async () => {
         playWithPet.play(pet)
-        .then(updatedPet => console.log('Played with pet'))
+        .then(updatedPet => {
+            onPetUpdate(updatedPet);
+            console.log('Played with pet');
+        })
         .catch(err => console.error('Error playing with pet'));
     };
 
