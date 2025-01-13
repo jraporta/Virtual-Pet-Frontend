@@ -31,7 +31,7 @@ const Pet = () => {
             <button className="pet-page-back-button" onClick={() => navigate(-1)}>Return</button>
             <div className="pet-page-content">
                 <PetInfoPanel pet={pet} className="pet-info-panel-extended" />
-                <PetCentralPanel pet={pet} />
+                <PetCentralPanel pet={pet} onPetUpdate={handlePetUpdate}/>
                 <PetInteractionPanel pet={pet} onPetUpdate={handlePetUpdate}/>
             </div>
         </div>
