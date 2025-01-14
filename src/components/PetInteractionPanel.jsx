@@ -3,6 +3,7 @@ import { feedPet } from "../services/interactions/feed";
 import { playWithPet } from "../services/interactions/play";
 import { cleanPet } from "../services/interactions/clean";
 import { setAccessory } from "../services/interactions/setAccessory";
+import FoodSelector from "./FoodSelector";
 
 const PetInteractionPanel = ({ pet, onPetUpdate }) => {
     const [color, setColor] = useState("");
@@ -29,7 +30,7 @@ const PetInteractionPanel = ({ pet, onPetUpdate }) => {
         feedPet.feedPet(pet, food)
         .then(updatedPet => {
             onPetUpdate(updatedPet);
-            console.log('Pet was feeded');
+            console.log('Pet has been fed', food);
         })
         .catch(err => console.error('Error feeding pet'));
     };
@@ -87,11 +88,9 @@ const PetInteractionPanel = ({ pet, onPetUpdate }) => {
 
     return (
         <div className="pet-interaction-panel">
-            <h2>Interact with the Pet</h2>
-            <button onClick={() => handleFeed('BREAD')}>Give Bread</button>
+            <FoodSelector onFoodSelect={handleFeed} />
             <button onClick={handlePlay}>Play</button>
             <button onClick={handleClean}>Clean</button>
-            <button onClick={handleGroom}>Groom</button>
             <button onClick={() => handleToggleTongue()}>Toggle Tongue</button>
             <button onClick={() => handleToggleGlasses()}>Toggle Glasses</button>
             <button onClick={() => handleToggleCap()}>Toggle Cap</button>

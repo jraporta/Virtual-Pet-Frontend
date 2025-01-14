@@ -31,7 +31,7 @@ const PetCentralPanel = ({ pet, onPetUpdate }) => {
         backgroundImage: `url(${background})`, // Dynamic background style
       }}
     >
-      <PetInteractiveImage />
+      <PetInteractiveImage petType={pet.type}/>
 
       <div className="bg-button-container">
         <button
