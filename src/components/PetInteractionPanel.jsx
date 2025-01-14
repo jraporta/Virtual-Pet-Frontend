@@ -6,7 +6,6 @@ import { setAccessory } from "../services/interactions/setAccessory";
 import FoodSelector from "./FoodSelector";
 
 const PetInteractionPanel = ({ pet, onPetUpdate }) => {
-    const [color, setColor] = useState("");
     const [tongueLayer, setTongueLayer] = useState(null);
     const [glassesLayer, setGlassesLayer] = useState(null);
     const [capLayer, setCapLayer] = useState(null);
@@ -53,8 +52,6 @@ const PetInteractionPanel = ({ pet, onPetUpdate }) => {
         .catch(err => console.error('Error cleaning the pet'));
     };
 
-    const handleGroom = () => alert("Grooming the pet!");
-
     const handleToggleTongue = () => {
         tongueLayer.style.opacity = tongueLayer.style.opacity === "1" ? "0" : "1";
     };
@@ -94,14 +91,6 @@ const PetInteractionPanel = ({ pet, onPetUpdate }) => {
             <button onClick={() => handleToggleTongue()}>Toggle Tongue</button>
             <button onClick={() => handleToggleGlasses()}>Toggle Glasses</button>
             <button onClick={() => handleToggleCap()}>Toggle Cap</button>
-            <label>
-                Change Pet Color:
-                <input
-                    type="color"
-                    value={color}
-                    onChange={(e) => setColor(e.target.value)}
-                />
-            </label>
         </div>
     );
 };

@@ -11,14 +11,18 @@ const petSVGMap = {
   HAMSTER: HamsterSVG,
 };
 
-const PetInteractiveImage = ({ petType, color = "salmon" }) => {
+const PetInteractiveImage = ({ petType, primaryColor = "salmon", secondaryColor = "gray" }) => {
   const SelectedPetSVG = petSVGMap[petType] || null;
 
   return (
 
     <div className="pet-svg-container">
       {SelectedPetSVG ? (
-        <SelectedPetSVG style={{ color: color }} />
+        <SelectedPetSVG style={{
+          '--primary-color': primaryColor,
+          '--secondary-color': secondaryColor,
+          color: primaryColor
+        }} />
       ) : (
         <p>Pet type not recognized!</p>
       )}

@@ -65,6 +65,14 @@
     transform-origin: 0px 50px;
 }
 
+.primary-color {
+    fill: var(--primary-color);
+}
+
+.secondary-color {
+    fill: var(--secondary-color);
+}
+
 /* Whiskers move */
 @keyframes whisker-move {
 

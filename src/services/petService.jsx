@@ -18,7 +18,7 @@ export const petService = {
     },
 
     async getValidColors() {
-        return ({colors: ['Aqua', 'Black', 'Blue', 'Fuchsia', 'Gray', 'Green', 'Lime', 'Maroon', 'navy', 'olive', 'purple', 'red', 'silver', 'teal', 'white', 'yellow' ]});
+        return ({colors: ['Aqua', 'Black', 'Blue', 'Fuchsia', 'Gray', 'Green', 'Lime', 'Maroon', 'Navy', 'Olive', 'Purple', 'Red', 'Silver', 'Teal', 'White', 'Yellow' ]});
     },
 
     async registerPet(petData) {
