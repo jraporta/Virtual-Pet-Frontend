@@ -9,21 +9,32 @@ const PetInteractionPanel = ({ pet, onPetUpdate }) => {
     const [tongueLayer, setTongueLayer] = useState(null);
     const [glassesLayer, setGlassesLayer] = useState(null);
     const [capLayer, setCapLayer] = useState(null);
+    const [pooLayer, setPooLayer] = useState(null);
 
     useEffect(() => {
         setTongueLayer(document.getElementById("tongue"));
         setGlassesLayer(document.getElementById("glasses"));
         setCapLayer(document.getElementById("cap"));
+        setPooLayer(document.getElementById("poo"));
     }, []);
 
     useEffect(() => {
         if (glassesLayer && pet.accessories.includes("SUNGLASSES")) {
-            toggleGlassesView();
+            glassesLayer.style.display = "inline";
+        } else if (glassesLayer && !pet.accessories.includes("SUNGLASSES")) {
+            glassesLayer.style.display = "none";
         }
         if (capLayer && pet.accessories.includes("CAP")) {
-            toggleCapView();
+            capLayer.style.display = "inline";
+        } else if (capLayer && !pet.accessories.includes("CAP")) {
+            capLayer.style.display = "none";
         }
-    }, [glassesLayer, capLayer]);
+        if (pooLayer && pet.hasPoo) {
+            pooLayer.style.display = "inline";
+        } else if (pooLayer && !pet.hasPoo) {
+            pooLayer.style.display = "none";
+        }
+    }, [glassesLayer, capLayer, pooLayer, pet]);
 
     const handleFeed = async (food) => {
         feedPet.feedPet(pet, food)
@@ -65,22 +76,12 @@ const PetInteractionPanel = ({ pet, onPetUpdate }) => {
         .catch(err => console.error('Error updating accessory: ', accessory));
     }
 
-    const toggleGlassesView = () => {
-        glassesLayer.style.display = glassesLayer.style.display === "none" ? "inline" : "none";
-    }
-
-    const toggleCapView = () => {
-        capLayer.style.display = capLayer.style.display === "none" ? "inline" : "none";
-    }
-
     const handleToggleGlasses = () => {
         setAccessoryOfPet(pet, 'SUNGLASSES');
-        toggleGlassesView();
     };
 
     const handleToggleCap = () => {
         setAccessoryOfPet(pet, 'CAP');
-        toggleCapView();
     };
 
     return (

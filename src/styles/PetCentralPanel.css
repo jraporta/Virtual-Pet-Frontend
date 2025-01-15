@@ -37,4 +37,12 @@
   .bg-button:hover {
     background-color: #45a049;
   }
+
+  #pet-SVG,
+  #speech-buble {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
   
