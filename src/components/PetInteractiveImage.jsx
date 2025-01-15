@@ -3,6 +3,7 @@ import CatSVG from '../../public/assets/svg/cat.svg?react';
 import DogSVG from '../../public/assets/svg/dog.svg?react';
 import HamsterSVG from '../../public/assets/svg/hamster.svg?react';
 import SpeechBubleSVG from '../../public/assets/svg/speech_buble.svg?react';
+import usePetExpressionManager from "../hook/PetExpressionManager";
 import '../styles/PetSVG.css';
 
 
@@ -12,8 +13,9 @@ const petSVGMap = {
   HAMSTER: HamsterSVG,
 };
 
-const PetInteractiveImage = ({ petType, primaryColor = "salmon", secondaryColor = "gray" }) => {
+const PetInteractiveImage = ({ pet, petType, primaryColor = "salmon", secondaryColor = "gray" }) => {
   const SelectedPetSVG = petSVGMap[petType] || null;
+  usePetExpressionManager(pet);
 
   return (
 
