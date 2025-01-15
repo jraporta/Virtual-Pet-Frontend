@@ -1,7 +1,7 @@
 import React from "react";
 import CatSVG from '../../public/assets/svg/cat.svg?react';
 import DogSVG from '../../public/assets/svg/dog.svg?react';
-import HamsterSVG from '../../public/assets/svg/simpleSVG.svg?react';
+import HamsterSVG from '../../public/assets/svg/hamster.svg?react';
 import '../styles/PetSVG.css';
 
 

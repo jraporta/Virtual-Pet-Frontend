@@ -89,7 +89,9 @@
 #wisker_1,
 #wisker_2,
 #wisker_3,
-#wisker_4 {
+#wisker_4,
+#wisker_5,
+#wisker_6 {
     animation: whisker-move 2s ease-in-out infinite;
     transform-origin: center;
 }

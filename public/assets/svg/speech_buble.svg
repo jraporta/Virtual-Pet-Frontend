@@ -1,0 +1,43 @@
+<svg width="400" height="400" viewBox="0 0 105.83333 105.83333" version="1.1" id="svg1" xml:space="preserve"
+  xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs1">
+    <rect x="219.22627" y="40.597458" width="68.00074" height="98.44883" id="rect1" />
+    <rect x="268.95816" y="51.761757" width="84.239723" height="34.507839" id="rect4" />
+    <rect x="268.95816" y="51.761757" width="84.239723" height="34.507839" id="rect10" />
+    <rect x="219.22627" y="40.597458" width="68.00074" height="98.44883" id="rect1-4" />
+    <rect x="219.22627" y="40.597458" width="68.00074" height="98.44883" id="rect1-5" />
+  </defs>
+  <g id="yuck" style="display:none">
+    <path style="fill:#ffffff;fill-opacity:0.797327;stroke:#000000;stroke-width:0.5;stroke-dasharray:none"
+      d="m 80.53924,5.251718 c 25.8,0 28.6,23.8 1.1,23.8 -27.6,0 -29.3,-24.2 -1.1,-23.8 z" id="path1" /><text
+      xml:space="preserve" transform="matrix(0.40987938,0,0,0.40987938,-39.055869,-7.390762)" id="text4"
+      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:'Comic Sans MS';-inkscape-font-specification:'Comic Sans MS';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect4);display:inline;fill:#000000;fill-opacity:0.797327;stroke:#000000;stroke-width:1.15888;stroke-dasharray:none">
+      <tspan x="268.95898" y="67.98064" id="tspan4">Yuck!</tspan>
+    </text>
+    <path style="fill:#ffffff;fill-opacity:0.796078;stroke:#000000;stroke-width:0.475001;stroke-dasharray:none"
+      d="m 82.11222,28.242274 c -0.473307,1.61772 -1.830877,2.438218 -4.417096,3.432309 5.902186,0.204775 7.931671,-2.211802 8.169025,-3.756458"
+      id="path8" />
+  </g>
+  <g id="sleep_z"><text xml:space="preserve" transform="matrix(0.26458333,0,0,0.26458333,31.15009,2.148282)" id="text1"
+      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:85.3333px;font-family:'Comic Sans MS';-inkscape-font-specification:'Comic Sans MS';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);display:inline;fill:#000000;fill-opacity:0.796078;stroke:#000000">
+      <tspan x="219.22656" y="114.74113" id="tspan5">Z</tspan>
+    </text><text xml:space="preserve" transform="matrix(0.17762078,0,0,0.20785936,38.006798,0.20639781)" id="text1-8"
+      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:85.3333px;font-family:'Comic Sans MS';-inkscape-font-specification:'Comic Sans MS';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-4);display:inline;fill:#000000;fill-opacity:0.796078;stroke:#000000">
+      <tspan x="219.22656" y="114.74113" id="tspan6">Z</tspan>
+    </text><text xml:space="preserve" transform="matrix(0.16347357,0,0,0.15876123,30.51766,18.782337)" id="text1-7"
+      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:85.3333px;font-family:'Comic Sans MS';-inkscape-font-specification:'Comic Sans MS';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-5);display:inline;fill:#000000;fill-opacity:0.796078;stroke:#000000">
+      <tspan x="219.22656" y="114.74113" id="tspan7">Z</tspan>
+    </text></g>
+  <g id="tasty" style="display:none">
+    <path
+      style="display:inline;fill:#ffffff;fill-opacity:0.797327;stroke:#000000;stroke-width:0.5;stroke-dasharray:none"
+      d="m 80.53924,5.251718 c 25.8,0 28.6,23.8 1.1,23.8 -27.6,0 -29.3,-24.2 -1.1,-23.8 z" id="path9" /><text
+      xml:space="preserve" transform="matrix(0.40987938,0,0,0.40987938,-40.935616,-8.7334383)" id="text9"
+      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:'Comic Sans MS';-inkscape-font-specification:'Comic Sans MS';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect10);display:inline;fill:#000000;fill-opacity:0.797327;stroke:#000000;stroke-width:1.15888;stroke-dasharray:none">
+      <tspan x="268.95898" y="67.98064" id="tspan8">tasty...</tspan>
+    </text>
+    <path style="fill:#ffffff;fill-opacity:0.796078;stroke:#000000;stroke-width:0.475001;stroke-dasharray:none"
+      d="m 82.11222,28.242274 c -0.473307,1.61772 -1.830877,2.438218 -4.417096,3.432309 5.902186,0.204775 7.931671,-2.211802 8.169025,-3.756458"
+      id="path3" />
+  </g>
+</svg>
