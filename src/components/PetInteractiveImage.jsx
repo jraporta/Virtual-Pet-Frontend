@@ -20,6 +20,7 @@ const PetInteractiveImage = ({ pet, petType, primaryColor = "salmon", secondaryC
   return (
 
     <div className="pet-svg-container">
+      <SpeechBubleSVG id="speech-buble"/>
       {SelectedPetSVG ? (
         <SelectedPetSVG
         id="pet-SVG" 
@@ -31,7 +32,6 @@ const PetInteractiveImage = ({ pet, petType, primaryColor = "salmon", secondaryC
       ) : (
         <p>Pet type not recognized!</p>
       )}
-      <SpeechBubleSVG id="speech-buble"/>
     </div>
 
   );
